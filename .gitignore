@@ -29,3 +29,7 @@ cypress/screenshots/
 cypress/videos/
 cypress/reports
 cypress/downloads/downloads.html
+cypress.config.js
+cypress/support/e2e.js
+cypress/fixtures/example.json
+cypress/support/commands.js

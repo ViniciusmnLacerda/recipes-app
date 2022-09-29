@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Header from '../components/Header'
 import DrinkDetails from '../components/DrinkDetails';
 import GoBack from '../components/GoBack';
 import MealDetails from '../components/MealDetails';
@@ -68,6 +69,7 @@ function RecipeDetails() {
 
   return (
     <main>
+      <Header pageTitle="Recipe Details" searchVisible={ false } />
       {path[1] === 'meals' ? (
         <>
           <GoBack />

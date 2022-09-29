@@ -4,6 +4,11 @@
   overflow-x: scroll;
 }
 
+section img {
+  height: 250px;
+  width: 250px;
+}
+
 .card-recommended-recipe {
   height: 230px;
   padding: 5px;

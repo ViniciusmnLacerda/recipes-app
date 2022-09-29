@@ -21,27 +21,31 @@ function MealsCards() {
   }, []);
 
   return (
-    <main>
+    <main className="meal-card-container">
       {mealsToRender.length > 0 && (
         mealsToRender.map((meal, index) => {
           const { strMeal, strMealThumb, idMeal } = meal;
           return (
-            <a
-              href={ `/meals/${idMeal}` }
-              data-testid={ `${index}-recipe-card` }
-              key={ idMeal }
-            >
-              <img
-                data-testid={ `${index}-card-img` }
-                src={ strMealThumb }
-                alt={ strMeal }
-              />
-              <p
-                data-testid={ `${index}-card-name` }
+            <div className="meal-card">
+              <a
+                href={ `/meals/${idMeal}` }
+                data-testid={ `${index}-recipe-card` }
+                key={ idMeal }
               >
-                {strMeal}
-              </p>
-            </a>
+                <img
+                  data-testid={ `${index}-card-img` }
+                  src={ strMealThumb }
+                  alt={ strMeal }
+                />
+                <div className="meal-card-description meal-card-bottom meal-card-search">
+                  <p
+                    data-testid={ `${index}-card-name` }
+                  >
+                    {strMeal}
+                  </p>
+                </div>
+              </a>
+            </div>
           );
         })
       )}
