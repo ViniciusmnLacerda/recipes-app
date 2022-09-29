@@ -1,0 +1,25 @@
+.recommended-recipes {
+  display: flex;
+  max-width: 300px;
+  overflow-x: scroll;
+}
+
+.card-recommended-recipe {
+  height: 230px;
+  padding: 5px;
+  width: 160px;
+}
+
+.card-recommended-recipe img {
+  width: 160px;
+}
+
+.start-btn {
+  bottom: 0;
+  position: fixed;
+}
+
+.favorite-and-share button img {
+  height: 30px;
+  width: 30px;
+}
