@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { drinksToRenderAction, mealsToRenderAction } from '../redux/actions';
 import { fetchDrinks, fetchMeals } from '../services/fetchAPI';
+import '../styles/SearchBar.css';
 
 function SearchBar() {
   const user = useSelector((state) => state.user);
@@ -60,66 +62,74 @@ function SearchBar() {
   };
 
   return (
-    <section>
+    <>
       {user.isSearchVisible && (
-        <form>
-          <label htmlFor="search">
-            <input
-              placeholder="Search"
-              data-testid="search-input"
-              name="search"
-              id="search"
-              value={ searchFilter.search }
-              onChange={ handleChange }
-              type="text"
-            />
-          </label>
-          <label htmlFor="ingredientRadio">
-            <input
-              data-testid="ingredient-search-radio"
-              type="radio"
-              checked={ searchFilter.radio === 'i' }
-              value="i"
-              id="ingredientRadio"
-              name="radio"
-              onChange={ handleChange }
-            />
-            Ingredient
-          </label>
-          <label htmlFor="searchRadio">
-            <input
-              type="radio"
-              checked={ searchFilter.radio === 's' }
-              value="s"
-              id="searchRadio"
-              name="radio"
-              data-testid="name-search-radio"
-              onChange={ handleChange }
-            />
-            Name
-          </label>
-          <label htmlFor="firstLetterRadio">
-            <input
-              type="radio"
-              checked={ searchFilter.radio === 'f' }
-              value="f"
-              name="radio"
-              id="firstLetterRadio"
-              data-testid="first-letter-search-radio"
-              onChange={ handleChange }
-            />
-            First letter
-          </label>
-          <button
-            data-testid="exec-search-btn"
-            type="button"
-            onClick={ handleClick }
-          >
-            Search
-          </button>
-        </form>
+        <section className="searchbar-container">
+          <form>
+            <div className="input-searchbar">
+              <label htmlFor="search">
+                <AiOutlineSearch fontSize={ 22 } />
+                <input
+                  placeholder="Search"
+                  data-testid="search-input"
+                  name="search"
+                  id="search"
+                  value={ searchFilter.search }
+                  onChange={ handleChange }
+                  type="text"
+                />
+              </label>
+            </div>
+            <div className="radio-searchbar">
+              <label htmlFor="ingredientRadio">
+                <input
+                  data-testid="ingredient-search-radio"
+                  type="radio"
+                  checked={ searchFilter.radio === 'i' }
+                  value="i"
+                  id="ingredientRadio"
+                  name="radio"
+                  onChange={ handleChange }
+                />
+                Ingredient
+              </label>
+              <label htmlFor="searchRadio">
+                <input
+                  type="radio"
+                  checked={ searchFilter.radio === 's' }
+                  value="s"
+                  id="searchRadio"
+                  name="radio"
+                  data-testid="name-search-radio"
+                  onChange={ handleChange }
+                />
+                Name
+              </label>
+              <label htmlFor="firstLetterRadio">
+                <input
+                  type="radio"
+                  checked={ searchFilter.radio === 'f' }
+                  value="f"
+                  name="radio"
+                  id="firstLetterRadio"
+                  data-testid="first-letter-search-radio"
+                  onChange={ handleChange }
+                />
+                First letter
+              </label>
+            </div>
+            <button
+              data-testid="exec-search-btn"
+              type="button"
+              onClick={ handleClick }
+              className="search-btn"
+            >
+              Search
+            </button>
+          </form>
+        </section>
       )}
-    </section>
+    </>
   );
 }
 
