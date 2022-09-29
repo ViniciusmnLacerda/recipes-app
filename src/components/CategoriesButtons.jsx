@@ -14,6 +14,7 @@ import {
   fetchMeals,
   fetchMealsCategories
 } from '../services/fetchAPI';
+import '../styles/CategoriesButtons.css';
 
 function CategoriesButtons() {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ function CategoriesButtons() {
     );
     const dataDrinks = await fetchDrinksCategories();
     const setCategorieDrinks = dataDrinks.filter(
-    (_, index) => index < maxCategoriesToRender,
+      (_, index) => index < maxCategoriesToRender,
     );
     dispatch(setCategoriesMeals(setCategorieMeals));
     dispatch(setCategoriesDrinks(setCategorieDrinks));
@@ -104,16 +105,19 @@ function CategoriesButtons() {
   };
 
   return (
-    <section>
-      <main>
+    <section className="category-buttons">
         {(path.includes('meals') ? meals : drinks).categories.map(
-          ({ strCategory }) => (
+          ({ strCategory }, index) => (
             <button
               key={ strCategory }
               data-testid={ `${strCategory}-category-filter` }
               type="button"
               onClick={ () => requestCategory(strCategory) }
             >
+              <img
+                src={path.includes('meals') ? (`/cm${index}.svg`) : (`/cd${index}.svg`)}
+                alt={strCategory}
+              />
               {strCategory}
             </button>
           ),
@@ -123,9 +127,12 @@ function CategoriesButtons() {
           data-testid="All-category-filter"
           onClick={ allRecipes }
         >
+          <img
+            src={path.includes('meals') ? ("/cm5.svg") : ("/cd5.svg")}
+            alt="All"
+          />
           All
         </button>
-      </main>
     </section>
   );
 }
