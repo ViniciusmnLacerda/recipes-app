@@ -88,6 +88,7 @@ function Login() {
         <label htmlFor="email">
         <AiOutlineUser fontSize={ 22 }/>
           <input
+            autoComplete='off'
             placeholder="E-mail"
             data-testid="email-input"
             type="email"
@@ -100,6 +101,7 @@ function Login() {
         <label htmlFor="password">
         <RiLockPasswordLine fontSize={ 22 } />
           <input
+            autoComplete='off'
             placeholder="Password"
             data-testid="password-input"
             type="password"
