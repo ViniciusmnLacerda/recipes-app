@@ -87,6 +87,7 @@
   font-size: 13px;
   padding-left: 40px;
   letter-spacing: 1px;
+  box-shadow: rgba(0, 0, 0, 0.10) 0 5px 15px;
 }
 
 .login-form button {
@@ -96,6 +97,15 @@
   position: relative;
   top: -20px;
   border: 1px solid var(--green);
+  background-color: var(--green);
+  color: white;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  font-size: 1rem;
+}
+
+.login-form button:disabled {
+  opacity: 0.3;
 }
 
 @media screen and (max-width: 650px) {
