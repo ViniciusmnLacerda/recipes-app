@@ -3,9 +3,15 @@
 }
 
 .meal-card-container {
-  display: flex column;
-  margin-top: 20px;
-  background-color: rgb(242, 242, 242);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  gap: 50px;
 }
 
 .meal-card img {
@@ -16,17 +22,22 @@
 .meal-card {
   display: flex;
   flex-direction: column;
-  margin: auto;
   width: 300px;
-  height: 100%;
-  gap: 8px;
-  line-height: 110%;
+  height: 250px;
   color: #222;
-  position: relative;
   margin-bottom: 20px;
   background-color: white;
   box-shadow: 0 3px 7.5px rgb(0 0 0 / 10%);
   border-radius: 10px 10px 10px 10px;
+}
+
+.meal-card a img {
+  width: 300px;
+  height: 220px;
+}
+
+.meal-card a {
+  text-align: center;
 }
 
 .meal-card-date {
@@ -36,18 +47,6 @@
   background-color: white;
   padding: 5px 7px;
   border-radius: 2px;
-}
-
-.meal-card-description {
-  margin-left: 10px;
-}
-
-.meal-card-bottom {
-  margin-bottom: 10px;
-}
-
-.meal-card-search {
-  margin-top: 8px;
 }
 
 .meal-card-button {
@@ -61,4 +60,9 @@
 
 .fav {
   left: 35px;
+}
+
+@media screen and (min-width: 650px) {
+  .meal-card-container {
+  }
 }

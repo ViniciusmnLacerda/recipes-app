@@ -37,13 +37,13 @@ function MealsCards() {
                   src={ strMealThumb }
                   alt={ strMeal }
                 />
-                <div className="meal-card-description meal-card-bottom meal-card-search">
-                  <p
-                    data-testid={ `${index}-card-name` }
-                  >
-                    {strMeal}
-                  </p>
-                </div>
+              </a>
+              <a
+                className="meal-card-description meal-card-bottom meal-card-search"
+                href={ `/meals/${idMeal}` }
+                data-testid={ `${index}-card-name` }
+              >
+                {strMeal}
               </a>
             </div>
           );
