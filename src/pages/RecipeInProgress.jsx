@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import DrinkDetails from '../components/DrinkDetails';
 import GoBack from '../components/GoBack';
+import Header from '../components/Header';
 import MealDetails from '../components/MealDetails';
 import {
   drinkDetailToRender, inProgressAction, loadingAction, mealDetailToRender
@@ -80,6 +81,7 @@ function InProgress() {
 
   return (
     <main>
+      <Header pageTitle="Recipe in Progress" searchVisible={ false } />
       {path.includes('meals') ? (
         <>
           <GoBack />

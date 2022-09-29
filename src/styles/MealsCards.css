@@ -1,4 +1,64 @@
-main img {
-  height: 250px;
-  width: 250px;
+* {
+  box-sizing: border-box;
+}
+
+.meal-card-container {
+  display: flex column;
+  margin-top: 20px;
+  background-color: rgb(242, 242, 242);
+}
+
+.meal-card img {
+  width: 300px;
+  border-radius: 10px 10px 0 0;
+}
+
+.meal-card {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 300px;
+  height: 100%;
+  gap: 8px;
+  line-height: 110%;
+  color: #222;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 3px 7.5px rgb(0 0 0 / 10%);
+  border-radius: 10px 10px 10px 10px;
+}
+
+.meal-card-date {
+  position: absolute;
+  top: 9px;
+  left: 200px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+}
+
+.meal-card-description {
+  margin-left: 10px;
+}
+
+.meal-card-bottom {
+  margin-bottom: 10px;
+}
+
+.meal-card-search {
+  margin-top: 8px;
+}
+
+.meal-card-button {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 5px 7px;
+  border-radius: 2px;
+  width: 35px;
+}
+
+.fav {
+  left: 35px;
 }

@@ -21,27 +21,31 @@ function DrinksCards() {
   }, []);
 
   return (
-    <main>
+    <main className="meal-card-container">
       {drinksToRender.length > 0 && (
         drinksToRender.map((meal, index) => {
           const { strDrink, strDrinkThumb, idDrink } = meal;
           return (
-            <a
-              href={ `/drinks/${idDrink}` }
-              data-testid={ `${index}-recipe-card` }
-              key={ idDrink }
-            >
-              <img
-                data-testid={ `${index}-card-img` }
-                src={ strDrinkThumb }
-                alt={ strDrink }
-              />
-              <p
-                data-testid={ `${index}-card-name` }
+            <div className="meal-card">
+              <a
+                href={ `/drinks/${idDrink}` }
+                data-testid={ `${index}-recipe-card` }
+                key={ idDrink }
               >
-                {strDrink}
-              </p>
-            </a>
+                <img
+                  data-testid={ `${index}-card-img` }
+                  src={ strDrinkThumb }
+                  alt={ strDrink }
+                />
+                <div className="meal-card-description meal-card-bottom meal-card-search">
+                  <p
+                    data-testid={ `${index}-card-name` }
+                  >
+                    {strDrink}
+                  </p>
+                </div>
+              </a>
+            </div>
           );
         })
       )}
