@@ -73,3 +73,14 @@
   box-shadow: var(--shadow);
   background-color: var(--dark);
 }
+
+@media screen and (min-width: 650px) {
+  .searchbar-container form {
+    width: 650px;
+  }
+
+  .input-searchbar label svg {
+    position: absolute;
+    left: calc(50% - 305px);
+  }
+}
