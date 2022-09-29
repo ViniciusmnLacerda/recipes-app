@@ -7,13 +7,13 @@ import SearchBar from '../components/SearchBar';
 
 function Meals() {
   return (
-    <div>
+    <>
       <Header pageTitle="Meals" />
       <SearchBar />
       <CategoriesButtons />
       <MealsCards />
       <Footer />
-    </div>
+    </>
   );
 }
 
