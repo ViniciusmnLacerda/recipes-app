@@ -28,7 +28,6 @@ function CategoriesButtons() {
     if (path.includes('meals')) {
       const endpoint = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
       const data = await fetchMeals(endpoint);
-      console.log(data);
       const maxRecipesToRender = 12;
       const setMeals = data.meals.filter(
         (_, index) => index < maxRecipesToRender,
@@ -67,6 +66,7 @@ function CategoriesButtons() {
     const maxRecipesToRender = 12;
     if (selectedCategory === category) {
       fetchDefaultRecipes();
+      setSelectedCategory('');
     } else if (path.includes('meals')) {
       const endpoint = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
       const mealsCategory = await fetchCategory(endpoint, 'meals');
@@ -74,6 +74,7 @@ function CategoriesButtons() {
         (_, index) => index < maxRecipesToRender,
       );
       dispatch(mealsToRenderAction(setMeals));
+      setSelectedCategory(category);
     } else {
       const endpoint = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`;
       const drinksCategory = await fetchCategory(endpoint, 'drinks');
@@ -81,11 +82,12 @@ function CategoriesButtons() {
         (_, index) => index < maxRecipesToRender,
       );
       dispatch(drinksToRenderAction(setDrinks));
+      setSelectedCategory(category);
     }
-    setSelectedCategory(category);
   };
 
   const allRecipes = async () => {
+    setSelectedCategory('');
     const maxRecipesToRender = 12;
     if (path.includes('meals')) {
       const endpoint = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
@@ -109,6 +111,7 @@ function CategoriesButtons() {
         {(path.includes('meals') ? meals : drinks).categories.map(
           ({ strCategory }, index) => (
             <button
+              className={ strCategory === selectedCategory ? 'category-selected' : undefined}
               key={ strCategory }
               data-testid={ `${strCategory}-category-filter` }
               type="button"
@@ -118,7 +121,6 @@ function CategoriesButtons() {
                 src={path.includes('meals') ? (`/cm${index}.svg`) : (`/cd${index}.svg`)}
                 alt={strCategory}
               />
-              {strCategory}
             </button>
           ),
         )}
@@ -131,7 +133,6 @@ function CategoriesButtons() {
             src={path.includes('meals') ? ("/cm5.svg") : ("/cd5.svg")}
             alt="All"
           />
-          All
         </button>
     </section>
   );

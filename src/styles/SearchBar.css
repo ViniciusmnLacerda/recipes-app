@@ -1,0 +1,75 @@
+.searchbar-container {
+  width: 100%;
+  height: 120px;
+  padding: 10px 20px;
+  background-image: linear-gradient(to right, #ff6363, #ea5f5f, #d65a5a, #c25656, #ae5151);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.searchbar-container form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.input-searchbar {
+  width: 100%;
+  height: 30px;
+}
+
+.input-searchbar label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 18px;
+  width: 100%;
+}
+
+.input-searchbar label input {
+  width: 100%;
+  height: 30px;
+  border: 0px solid transparent;
+  border-radius: 0;
+  outline: none;
+  transition: all .5s ease;
+  font-size: 13px;
+  padding-left: 40px;
+  letter-spacing: 1px;
+  box-shadow: rgba(0, 0, 0, 0.10) 0 5px 15px;
+}
+
+.input-searchbar label svg {
+  position: absolute;
+  left: 25px;
+}
+
+.radio-searchbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radio-searchbar label {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.search-btn {
+  width: 40%;
+  height: 30px;
+  border-radius: 10px 0 10px 10px;
+  border: 2px solid var(--dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: white;
+  box-shadow: var(--shadow);
+  background-color: var(--dark);
+}
