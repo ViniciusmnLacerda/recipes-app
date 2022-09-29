@@ -1,0 +1,124 @@
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: 320px;
+  height: 500px;
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+}
+
+.login-header {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-image: url('../../public/pattern-randomized.svg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  border-radius: 20px 20px 0 0;
+}
+
+.login-header img{
+  width: 100%;
+  height: 140px;
+}
+
+.icon-login {
+  background-color: var(--bg-color-secondary);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0 20px 20px;
+  position: relative;
+  top: -20px;
+}
+
+.icon-login img {
+  width: 50px;
+  height: 50px;
+  color: black;
+}
+
+.login-form {
+  width: 100%;
+  height: calc(100% - 160px);
+  border-radius: 40px 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  position: relative;
+  top: -40px;
+  background-color: var(--bg-color-secondary);
+  gap: 20px;
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 18px;
+  position: relative;
+  top: -40px;
+  width: 80%;
+}
+
+.login-form label svg {
+  position: absolute;
+  left: 10px;
+}
+
+.login-form label input {
+  width: 100%;
+  height: 40px;
+  border: 0px solid transparent;
+  border-radius: 0;
+  outline: none;
+  transition: all .5s ease;
+  font-size: 13px;
+  padding-left: 40px;
+  letter-spacing: 1px;
+}
+
+.login-form button {
+  width: 80%;
+  height: 40px;
+  border-radius: 10px 0 10px 10px;
+  position: relative;
+  top: -20px;
+  border: 1px solid var(--green);
+}
+
+@media screen and (max-width: 650px) {
+  .login-card {
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--shadow);
+    border-radius: 20px;
+  }
+
+  .login-header {
+    height: 35%;
+    border-radius: unset;
+  }
+  
+  .login-form {
+    height: calc(65% + 40px);
+    border-radius: 40px 0 0 0;
+    gap: 50px;
+  }
+
+  .login-form button {
+    top: -40px;
+  }
+
+}

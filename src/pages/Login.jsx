@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { AiOutlineUser } from "react-icons/ai";
+import { RiLockPasswordLine } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { login } from '../redux/actions';
+import '../styles/Login.css';
 
 function Login() {
   const [user, setUser] = useState({
@@ -74,10 +77,18 @@ function Login() {
   };
 
   return (
-    <div>
-      <form>
+    <div className="login-container">
+      <main className="login-card">
+        <div className="login-header">
+          <div className="icon-login">
+            <img src="/chef.svg" alt="chef" />
+          </div>
+        </div>
+      <form className='login-form'>
         <label htmlFor="email">
+        <AiOutlineUser fontSize={ 22 }/>
           <input
+            placeholder="E-mail"
             data-testid="email-input"
             type="email"
             value={ user.email }
@@ -87,7 +98,9 @@ function Login() {
           />
         </label>
         <label htmlFor="password">
+        <RiLockPasswordLine fontSize={ 22 } />
           <input
+            placeholder="Password"
             data-testid="password-input"
             type="password"
             value={ user.password }
@@ -105,6 +118,7 @@ function Login() {
           ENTER
         </button>
       </form>
+      </main>
     </div>
   );
 }
