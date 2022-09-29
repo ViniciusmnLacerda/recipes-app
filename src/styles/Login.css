@@ -96,8 +96,8 @@
   border-radius: 10px 0 10px 10px;
   position: relative;
   top: -20px;
-  border: 1px solid var(--green);
-  background-color: var(--green);
+  border: 1px solid var(--red);
+  background-color: var(--red);
   color: white;
   font-weight: 700;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;

@@ -12,7 +12,7 @@ function Recipes() {
   const history = useHistory();
   const path = history.location.pathname;
   return (
-    <div className='recipes-container'>
+    <>
       {path.includes('meals') ? (
       <>
         <Header pageTitle="Meals" />
@@ -30,7 +30,7 @@ function Recipes() {
         <Footer />
       </>
       )}
-    </div>
+    </>
   );
 }
 

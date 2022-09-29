@@ -5,14 +5,14 @@ import {
   drinksToRenderAction,
   mealsToRenderAction,
   setCategoriesDrinks,
-  setCategoriesMeals,
+  setCategoriesMeals
 } from '../redux/actions';
 import {
   fetchCategory,
   fetchDrinks,
   fetchDrinksCategories,
   fetchMeals,
-  fetchMealsCategories,
+  fetchMealsCategories
 } from '../services/fetchAPI';
 
 function CategoriesButtons() {
@@ -46,19 +46,16 @@ function CategoriesButtons() {
 
   const fetchCategories = async () => {
     const maxCategoriesToRender = 5;
-    if (path.includes('meals')) {
-      const data = await fetchMealsCategories();
-      const setCategories = data.filter(
-        (_, index) => index < maxCategoriesToRender,
-      );
-      dispatch(setCategoriesMeals(setCategories));
-    } else {
-      const data = await fetchDrinksCategories();
-      const setCategories = data.filter(
-        (_, index) => index < maxCategoriesToRender,
-      );
-      dispatch(setCategoriesDrinks(setCategories));
-    }
+    const dataMeals = await fetchMealsCategories();
+    const setCategorieMeals = dataMeals.filter(
+      (_, index) => index < maxCategoriesToRender,
+    );
+    const dataDrinks = await fetchDrinksCategories();
+    const setCategorieDrinks = dataDrinks.filter(
+    (_, index) => index < maxCategoriesToRender,
+    );
+    dispatch(setCategoriesMeals(setCategorieMeals));
+    dispatch(setCategoriesDrinks(setCategorieDrinks));
   };
 
   useEffect(() => {

@@ -1,13 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Footer.css';
+import { Link, useHistory } from 'react-router-dom';
 import drinkIcon from '../images/drinkIcon.svg';
 import mealIcon from '../images/mealIcon.svg';
+import '../styles/Footer.css';
 
 function Footer() {
+  const { location: { pathname } } = useHistory()
   return (
     <footer data-testid="footer">
-      <button type="button">
+      <button
+        className={pathname.includes('drinks') ? "selected" : undefined}
+        type="button"
+      >
         <Link to="/drinks">
           <img
             alt="drink img"
@@ -16,7 +20,10 @@ function Footer() {
           />
         </Link>
       </button>
-      <button type="button">
+      <button
+        className={pathname.includes('meals') ? "selected" : undefined}
+        type="button"
+      >
         <Link to="/meals">
           <img
             alt="drink img"

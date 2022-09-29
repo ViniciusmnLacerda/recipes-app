@@ -1,7 +1,7 @@
 .header-container {
   width: 100%;
   height: 56px;
-  background-image: linear-gradient(to right, #76a88f, #669c80, #559072, #458464, #347856);
+  background-image: linear-gradient(to right, #ff6363, #ea5f5f, #d65a5a, #c25656, #ae5151);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,8 +10,6 @@
 }
 
 .icon-header {
-  width: 45px;
-  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +28,7 @@
   letter-spacing: 1px;
 }
 
-.header-container div {
+.header-buttons {
   width: 70px;
   display: flex;
   align-items: center;
