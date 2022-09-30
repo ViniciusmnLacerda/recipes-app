@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -6,7 +7,10 @@ import GoBack from '../components/GoBack';
 import Header from '../components/Header';
 import MealDetails from '../components/MealDetails';
 import {
-  drinkDetailToRender, inProgressAction, loadingAction, mealDetailToRender
+  drinkDetailToRender,
+  inProgressAction,
+  loadingAction,
+  mealDetailToRender
 } from '../redux/actions';
 import { fetchRecipeDetails } from '../services/fetchAPI';
 import '../styles/RecipeInProgress.css';

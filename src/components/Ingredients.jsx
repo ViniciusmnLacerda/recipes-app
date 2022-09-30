@@ -24,7 +24,7 @@ function Ingredients({ ingredients, measure }) {
     dispatch(checkboxesAction(checkboxes));
   };
 
-  const getDefaultChecked = (checkboxesObj) => {
+  const getDefaultChecked = () => {
     const recovered = JSON.parse(localStorage.getItem('controlCheckboxes'));
     if (recovered !== null && Object.keys(recovered).length > 0) {
       const controlDefaultChecked = recovered[path[1]][path[2]];

@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable comma-dangle */
 import copy from 'clipboard-copy';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -7,7 +9,9 @@ import blackHeartIcon from '../images/blackHeartIcon.svg';
 import shareIcon from '../images/shareIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 import {
-  drinkDetailToRender, mealDetailToRender, wasCopiedAction
+  drinkDetailToRender,
+  mealDetailToRender,
+  wasCopiedAction
 } from '../redux/actions';
 
 function FavoriteAndShareButtons({ isFavorite }) {
