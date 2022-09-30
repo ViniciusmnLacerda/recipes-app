@@ -27,36 +27,38 @@ function Profile() {
   return (
     <>
       <Header pageTitle="Profile" searchVisible={false} />
-      <p
-        data-testid="profile-email"
-      >
-        {user.email}
-      </p>
-      <button
-        type="button"
-        data-testid="profile-favorite-btn"
-      >
-        <Link to="/favorite-recipes">
-          Favorite Recipes
-        </Link>
-      </button>
-      <button
-        data-testid="profile-done-btn"
-        type="button"
-      >
-        <Link
-          to="/done-recipes"
+      <main className="profile-container">
+        <p
+          data-testid="profile-email"
         >
-          Done Recipes
-        </Link>
-      </button>
-      <button
-        data-testid="profile-logout-btn"
-        type="button"
-        onClick={handleClick}
-      >
-        Logout
-      </button>
+          {user.email}
+        </p>
+        <button
+          type="button"
+          data-testid="profile-favorite-btn"
+        >
+          <Link to="/favorite-recipes">
+            Favorite Recipes
+          </Link>
+        </button>
+        <button
+          data-testid="profile-done-btn"
+          type="button"
+        >
+          <Link
+            to="/done-recipes"
+          >
+            Done Recipes
+          </Link>
+        </button>
+        <button
+          data-testid="profile-logout-btn"
+          type="button"
+          onClick={handleClick}
+        >
+          Logout
+        </button>
+      </main>
       <Footer />
     </>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import CategoriesButtons from '../components/CategoriesButtons';
@@ -13,7 +12,7 @@ function Recipes() {
   const history = useHistory();
   const path = history.location.pathname;
   return (
-    <>
+    <div>
       {path.includes('meals') ? (
         <>
           <Header pageTitle="Meals" />
@@ -31,7 +30,7 @@ function Recipes() {
           <Footer />
         </>
       )}
-    </>
+    </div>
   );
 }
 

@@ -42,18 +42,18 @@ function InProgress() {
     return btnIsDisabled;
   };
 
-  const setDoneRecipeObj = (path) => {
+  const setDoneRecipeObj = (pathName) => {
     const objDoneRecipe = {
-      id: path === 'meals' ? (mealDetails[0].idMeal) : (drinkDetails[0].idDrink),
-      type: path === 'meals' ? ('meal') : ('drink'),
-      nationality: path === 'meals' ? (mealDetails[0].strArea) : (''),
-      category: path === 'meals' ? (mealDetails[0].strCategory) : (''),
-      alcoholicOrNot: path === 'meals' ? ('') : (drinkDetails[0].strAlcoholic),
-      name: path === 'meals' ? (mealDetails[0].strMeal) : (drinkDetails[0].strDrink),
-      image: path === 'meals' ? (mealDetails[0].strMealThumb) : (drinkDetails[0].strDrinkThumb),
+      id: pathName === 'meals' ? (mealDetails[0].idMeal) : (drinkDetails[0].idDrink),
+      type: pathName === 'meals' ? ('meal') : ('drink'),
+      nationality: pathName === 'meals' ? (mealDetails[0].strArea) : (''),
+      category: pathName === 'meals' ? (mealDetails[0].strCategory) : (''),
+      alcoholicOrNot: pathName === 'meals' ? ('') : (drinkDetails[0].strAlcoholic),
+      name: pathName === 'meals' ? (mealDetails[0].strMeal) : (drinkDetails[0].strDrink),
+      image: pathName === 'meals' ? (mealDetails[0].strMealThumb) : (drinkDetails[0].strDrinkThumb),
       doneDate: new Date(Date.now()).toLocaleDateString(),
       // eslint-disable-next-line no-nested-ternary
-      tags: path === 'meals' ? ((mealDetails[0].strTags !== null) ? ([...mealDetails[0].strTags.split(',')]) : ([])) : ([]),
+      tags: pathName === 'meals' ? ((mealDetails[0].strTags !== null) ? ([...mealDetails[0].strTags.split(',')]) : ([])) : ([]),
     };
     return objDoneRecipe;
   };
