@@ -21,13 +21,14 @@ function DrinksCards() {
   }, []);
 
   return (
-    <main className="meal-card-container">
+    <main className="recipe-card-container">
       {drinksToRender.length > 0 && (
         drinksToRender.map((meal, index) => {
           const { strDrink, strDrinkThumb, idDrink } = meal;
           return (
-            <div className="meal-card">
+            <div className="recipe-card">
               <a
+                className="image-link"
                 href={ `/drinks/${idDrink}` }
                 data-testid={ `${index}-recipe-card` }
                 key={ idDrink }
@@ -38,13 +39,15 @@ function DrinksCards() {
                   alt={ strDrink }
                 />
               </a>
-              <a
-                className="meal-card-description meal-card-bottom meal-card-search"
-                href={ `/drinks/${idDrink}` }
-                data-testid={ `${index}-card-name` }
-              >
-                {strDrink}
-              </a>
+              <div className="recipe-link">
+                <a
+                  className="text-link"
+                  href={ `/drinks/${idDrink}` }
+                  data-testid={ `${index}-card-name` }
+                >
+                  {strDrink}
+                </a>
+              </div>
             </div>
           );
         })

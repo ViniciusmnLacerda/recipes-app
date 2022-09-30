@@ -21,13 +21,14 @@ function MealsCards() {
   }, []);
 
   return (
-    <main className="meal-card-container">
+    <main className="recipe-card-container">
       {mealsToRender.length > 0 && (
         mealsToRender.map((meal, index) => {
           const { strMeal, strMealThumb, idMeal } = meal;
           return (
-            <div className="meal-card">
+            <div className="recipe-card">
               <a
+                className="image-link"
                 href={ `/meals/${idMeal}` }
                 data-testid={ `${index}-recipe-card` }
                 key={ idMeal }
@@ -38,13 +39,15 @@ function MealsCards() {
                   alt={ strMeal }
                 />
               </a>
-              <a
-                className="meal-card-description meal-card-bottom meal-card-search"
-                href={ `/meals/${idMeal}` }
-                data-testid={ `${index}-card-name` }
-              >
-                {strMeal}
-              </a>
+              <div className="recipe-link">
+                <a
+                  className="text-link"
+                  href={ `/meals/${idMeal}` }
+                  data-testid={ `${index}-card-name` }
+                >
+                  {strMeal}
+                </a>
+              </div>
             </div>
           );
         })
