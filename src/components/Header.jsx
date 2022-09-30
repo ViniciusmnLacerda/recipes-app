@@ -18,7 +18,7 @@ function Header(props) {
           <img src="/chef.svg" alt="chef" />
         </a>
       </div>
-      <h1 data-testid="page-title">{pageTitle}</h1>
+      <h1 data-testid="page-title done-recipes-title">{pageTitle}</h1>
       <div className="header-buttons">
         <button type="button">
           <Link to="/profile">
