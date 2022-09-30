@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import CategoriesButtons from '../components/CategoriesButtons';
@@ -14,21 +15,21 @@ function Recipes() {
   return (
     <>
       {path.includes('meals') ? (
-      <>
-        <Header pageTitle="Meals" />
-        <SearchBar />
-        <CategoriesButtons />
-        <MealsCards />
-        <Footer />
-      </>
+        <>
+          <Header pageTitle="Meals" />
+          <SearchBar />
+          <CategoriesButtons />
+          <MealsCards />
+          <Footer />
+        </>
       ) : (
-      <>
-        <Header pageTitle="Drinks" />
-        <SearchBar />
-        <CategoriesButtons />
-        <DrinksCards />
-        <Footer />
-      </>
+        <>
+          <Header pageTitle="Drinks" />
+          <SearchBar />
+          <CategoriesButtons />
+          <DrinksCards />
+          <Footer />
+        </>
       )}
     </>
   );

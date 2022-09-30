@@ -108,32 +108,32 @@ function CategoriesButtons() {
 
   return (
     <section className="category-buttons">
-        {(path.includes('meals') ? meals : drinks).categories.map(
-          ({ strCategory }, index) => (
-            <button
-              className={ strCategory === selectedCategory ? 'category-selected' : undefined}
-              key={ strCategory }
-              data-testid={ `${strCategory}-category-filter` }
-              type="button"
-              onClick={ () => requestCategory(strCategory) }
-            >
-              <img
-                src={path.includes('meals') ? (`/cm${index}.svg`) : (`/cd${index}.svg`)}
-                alt={strCategory}
-              />
-            </button>
-          ),
-        )}
-        <button
-          type="button"
-          data-testid="All-category-filter"
-          onClick={ allRecipes }
-        >
-          <img
-            src={path.includes('meals') ? ("/cm5.svg") : ("/cd5.svg")}
-            alt="All"
-          />
-        </button>
+      {(path.includes('meals') ? meals : drinks).categories.map(
+        ({ strCategory }, index) => (
+          <button
+            className={strCategory === selectedCategory ? 'category-selected' : undefined}
+            key={strCategory}
+            data-testid={`${strCategory}-category-filter`}
+            type="button"
+            onClick={() => requestCategory(strCategory)}
+          >
+            <img
+              src={path.includes('meals') ? (`/cm${index}.svg`) : (`/cd${index}.svg`)}
+              alt={strCategory}
+            />
+          </button>
+        ),
+      )}
+      <button
+        type="button"
+        data-testid="All-category-filter"
+        onClick={allRecipes}
+      >
+        <img
+          src={path.includes('meals') ? ('/cm5.svg') : ('/cd5.svg')}
+          alt="All"
+        />
+      </button>
     </section>
   );
 }

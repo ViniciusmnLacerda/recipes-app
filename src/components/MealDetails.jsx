@@ -53,19 +53,19 @@ function MealDetails() {
           <section>
             <img
               data-testid="recipe-photo"
-              src={ mealDetails[0].strMealThumb }
-              alt={ mealDetails[0].strMeal }
+              src={mealDetails[0].strMealThumb}
+              alt={mealDetails[0].strMeal}
             />
             <h1 data-testid="recipe-title">{mealDetails[0].strMeal}</h1>
             <p data-testid="recipe-category">{mealDetails[0].strCategory}</p>
           </section>
           <section>
             <FavoriteAndShareButtons
-              isFavorite={ mealDetails[0].isFavorite }
+              isFavorite={mealDetails[0].isFavorite}
             />
             <Ingredients
-              ingredients={ ingredients }
-              measure={ measure }
+              ingredients={ingredients}
+              measure={measure}
             />
           </section>
           <section>
@@ -76,7 +76,7 @@ function MealDetails() {
             <section>
               <h2>Video</h2>
               <Video
-                urlYoutube={ urlYoutube }
+                urlYoutube={urlYoutube}
               />
             </section>
           )}

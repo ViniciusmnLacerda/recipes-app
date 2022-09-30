@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Header from '../components/Header'
 import DrinkDetails from '../components/DrinkDetails';
 import GoBack from '../components/GoBack';
+import Header from '../components/Header';
 import MealDetails from '../components/MealDetails';
 import RecommendedRecipes from '../components/RecommendedRecipes';
 import {
@@ -69,7 +69,7 @@ function RecipeDetails() {
 
   return (
     <main>
-      <Header pageTitle="Recipe Details" searchVisible={ false } />
+      <Header pageTitle="Recipe Details" searchVisible={false} />
       {path[1] === 'meals' ? (
         <>
           <GoBack />
@@ -88,7 +88,7 @@ function RecipeDetails() {
           data-testid="start-recipe-btn"
           type="button"
           className="start-btn"
-          onClick={ () => history.push(`/${path[1]}/${path[2]}/in-progress`) }
+          onClick={() => history.push(`/${path[1]}/${path[2]}/in-progress`)}
         >
           {continueRecipe() ? 'Continue Recipe' : 'Start Recipe'}
         </button>

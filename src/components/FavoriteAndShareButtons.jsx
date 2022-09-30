@@ -43,13 +43,13 @@ function FavoriteAndShareButtons({ isFavorite }) {
       return '';
     }
     switch (drinkDetails[0].strAlcoholic) {
-    case 'Optional alcohol':
-      return 'Optional alcoholic';
-    case 'Alcoholic':
-      return 'Alcoholic';
-    case 'Non alcoholic':
-      return 'Non alcoholic';
-    default:
+      case 'Optional alcohol':
+        return 'Optional alcoholic';
+      case 'Alcoholic':
+        return 'Alcoholic';
+      case 'Non alcoholic':
+        return 'Non alcoholic';
+      default:
     }
   };
 
@@ -121,15 +121,15 @@ function FavoriteAndShareButtons({ isFavorite }) {
       <input
         type="image"
         data-testid="share-btn"
-        onClick={ handleShare }
-        src={ shareIcon }
+        onClick={handleShare}
+        src={shareIcon}
         alt="share icon"
       />
       <input
         type="image"
         data-testid="favorite-btn"
-        onClick={ handleFavorite }
-        src={ isFavorite ? blackHeartIcon : whiteHeartIcon }
+        onClick={handleFavorite}
+        src={isFavorite ? blackHeartIcon : whiteHeartIcon}
         alt="share icon"
       />
       {wasCopied && <p>Link copied!</p>}

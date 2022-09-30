@@ -49,19 +49,19 @@ function DrinkDetails() {
           <section>
             <img
               data-testid="recipe-photo"
-              src={ drinkDetails[0].strDrinkThumb }
-              alt={ drinkDetails[0].strDrink }
+              src={drinkDetails[0].strDrinkThumb}
+              alt={drinkDetails[0].strDrink}
             />
             <h1 data-testid="recipe-title">{drinkDetails[0].strDrink}</h1>
             <p data-testid="recipe-category">{drinkDetails[0].strAlcoholic}</p>
           </section>
           <section>
             <FavoriteAndShareButtons
-              isFavorite={ drinkDetails[0].isFavorite }
+              isFavorite={drinkDetails[0].isFavorite}
             />
             <Ingredients
-              ingredients={ ingredients }
-              measure={ measure }
+              ingredients={ingredients}
+              measure={measure}
             />
           </section>
           <section>

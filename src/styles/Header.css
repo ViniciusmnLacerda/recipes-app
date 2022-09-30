@@ -45,6 +45,12 @@
   filter: brightness(0) invert(1);
 }
 
+@media screen and (max-width: 400px) {
+  .small-title, #small-title {
+    font-size: 20px;
+  }
+}
+
 @media screen and (min-width: 650px) {
   .header-container {
     height: 64px;

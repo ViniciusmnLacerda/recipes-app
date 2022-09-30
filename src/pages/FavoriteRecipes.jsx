@@ -1,21 +1,24 @@
-import clipboardCopy from "clipboard-copy";
-import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import TypeButtons from "../components/TypeButtons";
-import blackHeartIcon from "../images/blackHeartIcon.svg";
-import shareIcon from "../images/shareIcon.svg";
+/* eslint-disable react/no-array-index-key */
+import clipboardCopy from 'clipboard-copy';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
+import GoBack from '../components/GoBack';
+import Header from '../components/Header';
+import TypeButtons from '../components/TypeButtons';
+import blackHeartIcon from '../images/blackHeartIcon.svg';
+import shareIcon from '../images/shareIcon.svg';
+import '../styles/UserRecipes.css';
 
 function FavoriteRecipes() {
   const [isLinkCopied, setIsLinkCopied] = React.useState(false);
   const [unFavReRender, setUnFavReRender] = React.useState(false);
-  const favRecipes = JSON.parse(localStorage.getItem("favoriteRecipes"));
+  const favRecipes = JSON.parse(localStorage.getItem('favoriteRecipes'));
   const { recipeTypeFilter } = useSelector((state) => state.user);
 
   const handleShare = (type, id) => {
-    if (type === "drink") {
+    if (type === 'drink') {
       clipboardCopy(`http://localhost:3000/drinks/${id}`);
     } else {
       clipboardCopy(`http://localhost:3000/meals/${id}`);
@@ -29,63 +32,70 @@ function FavoriteRecipes() {
 
   const handleUnFavorite = (favRecipesArr, id) => {
     const newFaves = favRecipesArr.filter((recipe) => recipe.id !== id);
-    localStorage.setItem("favoriteRecipes", JSON.stringify(newFaves));
+    localStorage.setItem('favoriteRecipes', JSON.stringify(newFaves));
     setUnFavReRender(!unFavReRender);
   };
 
   return (
     <>
       <Header pageTitle="Favorite Recipes" searchVisible={false} />
-      <TypeButtons />
+      <GoBack />
+      <div className="nav-recipes-buttons">
+        <TypeButtons />
+      </div>
       {isLinkCopied && <p>Link copied!</p>}
-      <div className="meal-card-container">
+      <div className="user-recipe-container">
         {favRecipes ? (
           favRecipes
             .filter((recipe) => {
               switch (recipeTypeFilter) {
-                case "Meals":
-                  return recipe.type === "meal";
-                case "Drinks":
-                  return recipe.type === "drink";
+                case 'Meals':
+                  return recipe.type === 'meal';
+                case 'Drinks':
+                  return recipe.type === 'drink';
                 default:
                   return true;
               }
             })
             .map((recipe, index) => (
-              <div key={index} className="fav-recipe-card meal-card">
-                <Link to={`/${recipe.type}s/${recipe.id}`}>
+              <div key={index} className="user-recipe-card">
+                <Link
+                  className="user-recipe-image"
+                  to={`/${recipe.type}s/${recipe.id}`}
+                >
                   <img
                     data-testid={`${index}-horizontal-image`}
                     src={recipe.image}
                     alt={recipe.name}
                   />
                 </Link>
-                <div className="meal-card-description">
-                  <div data-testid={`${index}-horizontal-top-text`}>
-                    {recipe.type === "meal"
-                      ? `${recipe.nationality} - ${recipe.category}`
-                      : `${recipe.alcoholicOrNot}`}
+                <div className="user-recipe-description">
+                  <div className="user-recipe-title" data-testid={`${index}-horizontal-top-text`}>
+                    {recipe.type === 'meal'
+                      ? <p>{`${recipe.nationality} - ${recipe.category}`}</p>
+                      : <p>{`${recipe.alcoholicOrNot}`}</p> }
+                    <Link to={`/${recipe.type}s/${recipe.id}`}>
+                      {recipe.name}
+                    </Link>
                   </div>
-                  <Link to={`/${recipe.type}s/${recipe.id}`}>
-                    <div className="meal-card-bottom" data-testid={`${index}-horizontal-name`}>{recipe.name}</div>
-                  </Link>
+                  <div className="recipe-card-bottom">
+                    <input
+                      type="image"
+                      data-testid={`${index}-horizontal-share-btn`}
+                      onClick={() => handleShare(recipe.type, recipe.id)}
+                      src={shareIcon}
+                      alt="share icon"
+                    />
+                    <input
+                      type="image"
+                      data-testid={`${index}-horizontal-favorite-btn`}
+                      onClick={() => handleUnFavorite(favRecipes, recipe.id)}
+                      src={blackHeartIcon}
+                      className="favorite-heart"
+                      alt="unfav-btn"
+                    />
+                  </div>
                 </div>
-                <input
-                    type="image"
-                    className="meal-card-button"
-                    data-testid={`${index}-horizontal-share-btn`}
-                    onClick={() => handleShare(recipe.type, recipe.id)}
-                    src={shareIcon}
-                    alt="share icon"
-                  />
-                <input
-                  type="image"
-                  className="meal-card-button fav"
-                  data-testid={`${index}-horizontal-favorite-btn`}
-                  onClick={() => handleUnFavorite(favRecipes, recipe.id)}
-                  src={blackHeartIcon}
-                  alt="unfav-btn"
-                />
               </div>
             ))
         ) : (

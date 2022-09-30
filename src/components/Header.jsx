@@ -18,13 +18,19 @@ function Header(props) {
           <img src="/chef.svg" alt="chef" />
         </a>
       </div>
-      <h1 data-testid="page-title done-recipes-title">{pageTitle}</h1>
+      <h1
+        className={pageTitle === 'Favorite Recipes' ? 'small-title' : undefined}
+        id={pageTitle === 'Done Recipes' ? 'small-title' : undefined}
+        data-testid="page-title"
+      >
+        {pageTitle}
+      </h1>
       <div className="header-buttons">
         <button type="button">
           <Link to="/profile">
             <img
               alt="profile img"
-              src={ profileIcon }
+              src={profileIcon}
               data-testid="profile-top-btn"
             />
           </Link>
@@ -33,11 +39,11 @@ function Header(props) {
           <button
             data-testid="open-searchbar"
             type="button"
-            onClick={ () => dispatch(showSearch()) }
+            onClick={() => dispatch(showSearch())}
           >
             <img
               alt="search img"
-              src={ searchIcon }
+              src={searchIcon}
               data-testid="search-top-btn"
             />
           </button>

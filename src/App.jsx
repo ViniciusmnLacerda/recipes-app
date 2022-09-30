@@ -14,52 +14,52 @@ function App() {
       <Route
         exact
         path="/"
-        component={ Login }
+        component={Login}
       />
       <Route
         exact
         path="/meals"
-        component={ Recipes }
+        component={Recipes}
       />
       <Route
         exact
         path="/drinks"
-        component={ Recipes }
+        component={Recipes}
       />
       <Route
         exact
         path="/profile"
-        component={ Profile }
+        component={Profile}
       />
       <Route
         exact
         path="/done-recipes"
-        component={ DoneRecipes }
+        component={DoneRecipes}
       />
       <Route
         exact
         path="/favorite-recipes"
-        component={ FavoriteRecipes }
+        component={FavoriteRecipes}
       />
       <Route
         exact
         path="/meals/:id"
-        component={ RecipeDetails }
+        component={RecipeDetails}
       />
       <Route
         exact
         path="/drinks/:id"
-        component={ RecipeDetails }
+        component={RecipeDetails}
       />
       <Route
         exact
         path="/meals/:id/in-progress"
-        component={ RecipeInProgress }
+        component={RecipeInProgress}
       />
       <Route
         exact
         path="/drinks/:id/in-progress"
-        component={ RecipeInProgress }
+        component={RecipeInProgress}
 
       />
     </Switch>

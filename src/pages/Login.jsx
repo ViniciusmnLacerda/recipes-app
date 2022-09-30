@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser } from 'react-icons/ai';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -84,42 +84,42 @@ function Login() {
             <img src="/chef.svg" alt="chef" />
           </div>
         </div>
-      <form className='login-form'>
-        <label htmlFor="email">
-        <AiOutlineUser fontSize={ 22 }/>
-          <input
-            autoComplete='off'
-            placeholder="E-mail"
-            data-testid="email-input"
-            type="email"
-            value={ user.email }
-            onChange={ (event) => handleChange(event) }
-            id="email"
-            name="email"
-          />
-        </label>
-        <label htmlFor="password">
-        <RiLockPasswordLine fontSize={ 22 } />
-          <input
-            autoComplete='off'
-            placeholder="Password"
-            data-testid="password-input"
-            type="password"
-            value={ user.password }
-            onChange={ (event) => handleChange(event) }
-            id="password"
-            name="password"
-          />
-        </label>
-        <button
-          data-testid="login-submit-btn"
-          type="button"
-          disabled={ isEnterDisabled }
-          onClick={ handleClick }
-        >
-          ENTER
-        </button>
-      </form>
+        <form className="login-form">
+          <label htmlFor="email">
+            <AiOutlineUser fontSize={22} />
+            <input
+              autoComplete="off"
+              placeholder="E-mail"
+              data-testid="email-input"
+              type="email"
+              value={user.email}
+              onChange={(event) => handleChange(event)}
+              id="email"
+              name="email"
+            />
+          </label>
+          <label htmlFor="password">
+            <RiLockPasswordLine fontSize={22} />
+            <input
+              autoComplete="off"
+              placeholder="Password"
+              data-testid="password-input"
+              type="password"
+              value={user.password}
+              onChange={(event) => handleChange(event)}
+              id="password"
+              name="password"
+            />
+          </label>
+          <button
+            data-testid="login-submit-btn"
+            type="button"
+            disabled={isEnterDisabled}
+            onClick={handleClick}
+          >
+            ENTER
+          </button>
+        </form>
       </main>
     </div>
   );

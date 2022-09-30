@@ -16,18 +16,17 @@ function RecommendedRecipes() {
           drinksToRecommend.map((recipe, index) => (
             <div
               className="card-recommended-recipe"
-              key={ recipe.idDrink }
-              data-testid={ `${index}-recommendation-card` }
+              key={recipe.idDrink}
+              data-testid={`${index}-recommendation-card`}
             >
-              <a href={ `/drinks/${recipe.idDrink}` }
-              >
+              <a href={`/drinks/${recipe.idDrink}`}>
                 <img
-                  src={ recipe.strDrinkThumb }
-                  alt={ recipe.strDrink }
+                  src={recipe.strDrinkThumb}
+                  alt={recipe.strDrink}
                 />
               </a>
-              <a href={ `/drinks/${recipe.idDrink}` }>
-                <h3 data-testid={ `${index}-recommendation-title` }>{recipe.strDrink}</h3>
+              <a href={`/drinks/${recipe.idDrink}`}>
+                <h3 data-testid={`${index}-recommendation-title`}>{recipe.strDrink}</h3>
               </a>
             </div>
           ))
@@ -35,17 +34,17 @@ function RecommendedRecipes() {
           mealsToRecommend.map((recipe, index) => (
             <div
               className="card-recommended-recipe"
-              key={ recipe.idMeal }
-              data-testid={ `${index}-recommendation-card` }
+              key={recipe.idMeal}
+              data-testid={`${index}-recommendation-card`}
             >
-              <a href={ `/meals/${recipe.idMeal}` }>
+              <a href={`/meals/${recipe.idMeal}`}>
                 <img
-                  src={ recipe.strMealThumb }
-                  alt={ recipe.strMeal }
+                  src={recipe.strMealThumb}
+                  alt={recipe.strMeal}
                 />
               </a>
-              <a href={ `/meals/${recipe.idMeal}` }>
-                <h3 data-testid={ `${index}-recommendation-title` }>{recipe.strMeal}</h3>
+              <a href={`/meals/${recipe.idMeal}`}>
+                <h3 data-testid={`${index}-recommendation-title`}>{recipe.strMeal}</h3>
               </a>
             </div>
           ))

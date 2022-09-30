@@ -137,8 +137,8 @@ function Ingredients({ ingredients, measure }) {
         <ul>
           {ingredients.map((ingredient, index) => (
             <li
-              data-testid={ `${index}-ingredient-name-and-measure` }
-              key={ ingredient }
+              data-testid={`${index}-ingredient-name-and-measure`}
+              key={ingredient}
             >
               {`${ingredient} - ${measure[index]}`}
             </li>
@@ -149,20 +149,20 @@ function Ingredients({ ingredients, measure }) {
           <div className="ingredients-inprogress">
             {ingredients.map((ingredient, index) => (
               <label
-                key={ ingredient }
-                htmlFor={ `ingredient-checkbox-${index}` }
-                data-testid={ `${index}-ingredient-step` }
+                key={ingredient}
+                htmlFor={`ingredient-checkbox-${index}`}
+                data-testid={`${index}-ingredient-step`}
                 className={
                   checkboxes[`ingredient-checkbox-${index}`] ? 'completed' : undefined
                 }
               >
                 <input
                   type="checkbox"
-                  name={ `ingredient-checkbox-${index}` }
-                  id={ `ingredient-checkbox-${index}` }
-                  checked={ controlCheckboxes[`ingredient-checkbox-${index}`] }
-                  onChange={ handleChange }
-                  defaultChecked={ defaultChecked[`ingredient-checkbox-${index}`] }
+                  name={`ingredient-checkbox-${index}`}
+                  id={`ingredient-checkbox-${index}`}
+                  checked={controlCheckboxes[`ingredient-checkbox-${index}`]}
+                  onChange={handleChange}
+                  defaultChecked={defaultChecked[`ingredient-checkbox-${index}`]}
                 />
                 {`${ingredient} - ${measure[index]}`}
               </label>

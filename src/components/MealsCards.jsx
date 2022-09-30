@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { mealsToRenderAction } from '../redux/actions';
 import { fetchMeals } from '../services/fetchAPI';
-import '../styles/MealsCards.css';
 
 function MealsCards() {
   const dispatch = useDispatch();
@@ -29,21 +28,21 @@ function MealsCards() {
             <div className="recipe-card">
               <a
                 className="image-link"
-                href={ `/meals/${idMeal}` }
-                data-testid={ `${index}-recipe-card` }
-                key={ idMeal }
+                href={`/meals/${idMeal}`}
+                data-testid={`${index}-recipe-card`}
+                key={idMeal}
               >
                 <img
-                  data-testid={ `${index}-card-img` }
-                  src={ strMealThumb }
-                  alt={ strMeal }
+                  data-testid={`${index}-card-img`}
+                  src={strMealThumb}
+                  alt={strMeal}
                 />
               </a>
               <div className="recipe-link">
                 <a
                   className="text-link"
-                  href={ `/meals/${idMeal}` }
-                  data-testid={ `${index}-card-name` }
+                  href={`/meals/${idMeal}`}
+                  data-testid={`${index}-card-name`}
                 >
                   {strMeal}
                 </a>

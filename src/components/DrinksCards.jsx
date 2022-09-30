@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { drinksToRenderAction } from '../redux/actions';
 import { fetchDrinks } from '../services/fetchAPI';
-import '../styles/DrinksCards.css';
 
 function DrinksCards() {
   const dispatch = useDispatch();
@@ -29,21 +28,21 @@ function DrinksCards() {
             <div className="recipe-card">
               <a
                 className="image-link"
-                href={ `/drinks/${idDrink}` }
-                data-testid={ `${index}-recipe-card` }
-                key={ idDrink }
+                href={`/drinks/${idDrink}`}
+                data-testid={`${index}-recipe-card`}
+                key={idDrink}
               >
                 <img
-                  data-testid={ `${index}-card-img` }
-                  src={ strDrinkThumb }
-                  alt={ strDrink }
+                  data-testid={`${index}-card-img`}
+                  src={strDrinkThumb}
+                  alt={strDrink}
                 />
               </a>
               <div className="recipe-link">
                 <a
                   className="text-link"
-                  href={ `/drinks/${idDrink}` }
-                  data-testid={ `${index}-card-name` }
+                  href={`/drinks/${idDrink}`}
+                  data-testid={`${index}-card-name`}
                 >
                   {strDrink}
                 </a>

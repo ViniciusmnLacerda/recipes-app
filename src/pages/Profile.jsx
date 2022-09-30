@@ -26,7 +26,7 @@ function Profile() {
 
   return (
     <>
-      <Header pageTitle="Profile" searchVisible={ false } />
+      <Header pageTitle="Profile" searchVisible={false} />
       <p
         data-testid="profile-email"
       >
@@ -53,7 +53,7 @@ function Profile() {
       <button
         data-testid="profile-logout-btn"
         type="button"
-        onClick={ handleClick }
+        onClick={handleClick}
       >
         Logout
       </button>

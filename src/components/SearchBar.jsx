@@ -1,5 +1,6 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { useState } from 'react';
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { drinksToRenderAction, mealsToRenderAction } from '../redux/actions';
@@ -68,14 +69,14 @@ function SearchBar() {
           <form>
             <div className="input-searchbar">
               <label htmlFor="search">
-                <AiOutlineSearch fontSize={ 22 } />
+                <AiOutlineSearch fontSize={22} />
                 <input
                   placeholder="Search"
                   data-testid="search-input"
                   name="search"
                   id="search"
-                  value={ searchFilter.search }
-                  onChange={ handleChange }
+                  value={searchFilter.search}
+                  onChange={handleChange}
                   type="text"
                 />
               </label>
@@ -85,35 +86,35 @@ function SearchBar() {
                 <input
                   data-testid="ingredient-search-radio"
                   type="radio"
-                  checked={ searchFilter.radio === 'i' }
+                  checked={searchFilter.radio === 'i'}
                   value="i"
                   id="ingredientRadio"
                   name="radio"
-                  onChange={ handleChange }
+                  onChange={handleChange}
                 />
                 Ingredient
               </label>
               <label htmlFor="searchRadio">
                 <input
                   type="radio"
-                  checked={ searchFilter.radio === 's' }
+                  checked={searchFilter.radio === 's'}
                   value="s"
                   id="searchRadio"
                   name="radio"
                   data-testid="name-search-radio"
-                  onChange={ handleChange }
+                  onChange={handleChange}
                 />
                 Name
               </label>
               <label htmlFor="firstLetterRadio">
                 <input
                   type="radio"
-                  checked={ searchFilter.radio === 'f' }
+                  checked={searchFilter.radio === 'f'}
                   value="f"
                   name="radio"
                   id="firstLetterRadio"
                   data-testid="first-letter-search-radio"
-                  onChange={ handleChange }
+                  onChange={handleChange}
                 />
                 First letter
               </label>
@@ -121,7 +122,7 @@ function SearchBar() {
             <button
               data-testid="exec-search-btn"
               type="button"
-              onClick={ handleClick }
+              onClick={handleClick}
               className="search-btn"
             >
               Search

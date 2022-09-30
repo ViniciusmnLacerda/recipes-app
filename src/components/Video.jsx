@@ -9,7 +9,7 @@ function Video({ urlYoutube }) {
       data-testid="video"
       width="300"
       height="250"
-      src={ urlYoutube }
+      src={urlYoutube}
       title="YouTube video player"
     />
   );
