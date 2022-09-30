@@ -9,9 +9,9 @@ function RecommendedRecipes() {
   const { mealsToRecommend } = useSelector((state) => state.meals);
 
   return (
-    <div>
+    <section>
       <h2>Recommended</h2>
-      <section className="recommended-recipes">
+      <div className="recommended-recipes">
         {path.includes('meals') ? (
           drinksToRecommend.map((recipe, index) => (
             <div
@@ -49,8 +49,8 @@ function RecommendedRecipes() {
             </div>
           ))
         )}
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

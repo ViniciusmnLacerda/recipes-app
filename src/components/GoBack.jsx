@@ -5,8 +5,11 @@ import '../styles/GoBack.css';
 
 function GoBack() {
   const history = useHistory();
+  const path = history.location.pathname;
   return (
-    <div className="goback">
+    <div
+      className={(path.includes('drinks') || path.includes('meals')) ? 'goback topgb' : 'goback'}
+    >
       <button
         type="button"
         onClick={() => history.goBack()}

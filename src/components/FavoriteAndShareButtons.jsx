@@ -19,7 +19,6 @@ function FavoriteAndShareButtons({ isFavorite }) {
   const path = history.location;
   const pathCopy = window.location;
   const dispatch = useDispatch();
-  const { wasCopied } = useSelector((state) => state.user);
   const { drinkDetails } = useSelector((state) => state.drinks);
   const { mealDetails } = useSelector((state) => state.meals);
 
@@ -122,21 +121,24 @@ function FavoriteAndShareButtons({ isFavorite }) {
 
   return (
     <div className="favorite-and-share">
-      <input
-        type="image"
-        data-testid="share-btn"
-        onClick={handleShare}
-        src={shareIcon}
-        alt="share icon"
-      />
-      <input
-        type="image"
-        data-testid="favorite-btn"
-        onClick={handleFavorite}
-        src={isFavorite ? blackHeartIcon : whiteHeartIcon}
-        alt="share icon"
-      />
-      {wasCopied && <p>Link copied!</p>}
+      <div className="share">
+        <input
+          type="image"
+          data-testid="share-btn"
+          onClick={handleShare}
+          src={shareIcon}
+          alt="share icon"
+        />
+      </div>
+      <div className={isFavorite ? 'favorite true' : 'favorite'}>
+        <input
+          type="image"
+          data-testid="favorite-btn"
+          onClick={handleFavorite}
+          src={isFavorite ? blackHeartIcon : whiteHeartIcon}
+          alt="share icon"
+        />
+      </div>
     </div>
   );
 }

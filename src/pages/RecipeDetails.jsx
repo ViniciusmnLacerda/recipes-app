@@ -3,10 +3,8 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import DrinkDetails from '../components/DrinkDetails';
-import GoBack from '../components/GoBack';
 import Header from '../components/Header';
 import MealDetails from '../components/MealDetails';
-import RecommendedRecipes from '../components/RecommendedRecipes';
 import {
   drinkDetailToRender,
   drinksToRecommend,
@@ -69,20 +67,12 @@ function RecipeDetails() {
   }, []);
 
   return (
-    <main>
-      <Header pageTitle="Recipe Details" searchVisible={false} />
+    <div className="main-container">
+      <Header pageTitle="Details" searchVisible={false} />
       {path[1] === 'meals' ? (
-        <>
-          <GoBack />
-          <MealDetails />
-          <RecommendedRecipes />
-        </>
+        <MealDetails />
       ) : (
-        <>
-          <GoBack />
-          <DrinkDetails />
-          <RecommendedRecipes />
-        </>
+        <DrinkDetails />
       )}
       {!finishedRecipe() && (
         <button
@@ -94,7 +84,7 @@ function RecipeDetails() {
           {continueRecipe() ? 'Continue Recipe' : 'Start Recipe'}
         </button>
       )}
-    </main>
+    </div>
   );
 }
 
