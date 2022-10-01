@@ -25,7 +25,7 @@ function Header(props) {
       >
         {pageTitle}
       </h1>
-      <div className="header-buttons">
+      <div className={searchVisible ? 'header-buttons' : 'header-buttons nosearch'}>
         <button type="button">
           <Link to="/profile">
             <img

@@ -4,7 +4,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
-import GoBack from '../components/GoBack';
 import Header from '../components/Header';
 import TypeButtons from '../components/TypeButtons';
 import shareIcon from '../images/shareIcon.svg';
@@ -32,7 +31,6 @@ function DoneRecipes() {
   return (
     <>
       <Header pageTitle="Done Recipes" searchVisible={false} />
-      <GoBack />
       <div className="nav-recipes-buttons">
         <TypeButtons />
       </div>

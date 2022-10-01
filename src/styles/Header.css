@@ -45,6 +45,11 @@
   filter: brightness(0) invert(1);
 }
 
+.nosearch {
+  width: unset;
+  justify-content: end;
+}
+
 @media screen and (max-width: 420px) {
   .small-title, #small-title {
     font-size: 20px;
