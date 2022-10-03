@@ -93,11 +93,7 @@
   border-radius: 5px;
   box-shadow: var(--shadow);
   background-image: linear-gradient(to right, #ff6363, #ea5f5f, #d65a5a, #c25656, #ae5151);
-}
-
-.link-copied {
   color: white;
-  font: 18px;
   letter-spacing: 1px;
 }
 

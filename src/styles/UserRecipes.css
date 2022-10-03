@@ -94,3 +94,19 @@
 .favorite-heart {
   filter: invert(12%) sepia(100%) saturate(6819%) hue-rotate(357deg) brightness(91%) contrast(118%);
 }
+
+.link-copied-d {
+  position: fixed;
+  top: 130px;
+  right: calc(50% - 60px);
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  background-image: linear-gradient(to right, #ff6363, #ea5f5f, #d65a5a, #c25656, #ae5151);
+  color: white;
+  letter-spacing: 1px;
+}

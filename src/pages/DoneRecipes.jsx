@@ -34,7 +34,11 @@ function DoneRecipes() {
       <div className="nav-recipes-buttons">
         <TypeButtons />
       </div>
-      {isLinkCopied && <p>Link copied!</p>}
+      {isLinkCopied && (
+      <div className="link-copied-d">
+        <p>Link copied!</p>
+      </div>
+      )}
       <div className="user-recipe-container">
         {doneRecipes ? (
           doneRecipes
