@@ -9,43 +9,65 @@ function RecommendedRecipes() {
   const { mealsToRecommend } = useSelector((state) => state.meals);
 
   return (
-    <section>
+    <section className="recipe-details-recommended">
       <h2>Recommended</h2>
       <div className="recommended-recipes">
         {path.includes('meals') ? (
           drinksToRecommend.map((recipe, index) => (
             <div
-              className="card-recommended-recipe"
+              className="recipe-card"
               key={recipe.idDrink}
               data-testid={`${index}-recommendation-card`}
             >
-              <a href={`/drinks/${recipe.idDrink}`}>
+              <a
+                className="image-link"
+                href={`/drinks/${recipe.idDrink}`}
+              >
                 <img
                   src={recipe.strDrinkThumb}
                   alt={recipe.strDrink}
                 />
               </a>
-              <a href={`/drinks/${recipe.idDrink}`}>
-                <h3 data-testid={`${index}-recommendation-title`}>{recipe.strDrink}</h3>
-              </a>
+              <div
+                className="recipe-link"
+              >
+                <a
+                  href={`/drinks/${recipe.idDrink}`}
+                  data-testid={`${index}-recommendation-title`}
+                >
+                  {recipe.strDrink}
+
+                </a>
+              </div>
             </div>
           ))
         ) : (
           mealsToRecommend.map((recipe, index) => (
             <div
-              className="card-recommended-recipe"
+              className="recipe-card"
               key={recipe.idMeal}
               data-testid={`${index}-recommendation-card`}
             >
-              <a href={`/meals/${recipe.idMeal}`}>
+              <a
+                className="image-link"
+                href={`/meals/${recipe.idMeal}`}
+              >
                 <img
                   src={recipe.strMealThumb}
                   alt={recipe.strMeal}
                 />
               </a>
-              <a href={`/meals/${recipe.idMeal}`}>
-                <h3 data-testid={`${index}-recommendation-title`}>{recipe.strMeal}</h3>
-              </a>
+              <div
+                className="recipe-link"
+              >
+                <a
+                  data-testid={`${index}-recommendation-title`}
+                  href={`/meals/${recipe.idMeal}`}
+                >
+                  {recipe.strMeal}
+
+                </a>
+              </div>
             </div>
           ))
         )}

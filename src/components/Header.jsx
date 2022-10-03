@@ -19,7 +19,7 @@ function Header(props) {
         </a>
       </div>
       <h1
-        className={pageTitle === 'Favorite Recipes' ? 'small-title' : undefined}
+        className={(pageTitle === 'Favorite Recipes' || pageTitle === 'Recipe in Progress') ? 'small-title' : undefined}
         id={pageTitle === 'Done Recipes' ? 'small-title' : undefined}
         data-testid="page-title"
       >

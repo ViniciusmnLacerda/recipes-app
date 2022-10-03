@@ -86,7 +86,7 @@ function MealDetails() {
             </div>
           </section>
           {!inProgress && (
-            <section>
+            <section className="recipe-details-video">
               <h2>Video</h2>
               <Video
                 urlYoutube={urlYoutube}

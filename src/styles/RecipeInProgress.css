@@ -1,8 +1,38 @@
 .ingredients-inprogress {
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: var(--shadow);
 }
 
+.ingredients-inprogress label {
+  display: flex;
+  gap: 6px;
+}
 .completed {
   text-decoration: line-through;
+}
+
+.finish-btn {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px 0 10px 10px;
+  border: 2px solid var(--dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: white;
+  box-shadow: var(--shadow);
+  background-color: var(--dark);
+  cursor: pointer;
+  position: relative;
+  left: calc(50% - 100px);
+  bottom: 120px;
+}
+
+.finish-btn:disabled {
+  opacity: 0.3;
+  cursor: progress;
 }

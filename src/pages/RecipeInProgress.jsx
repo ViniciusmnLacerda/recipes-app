@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import DrinkDetails from '../components/DrinkDetails';
-import GoBack from '../components/GoBack';
 import Header from '../components/Header';
 import MealDetails from '../components/MealDetails';
 import {
@@ -82,26 +81,21 @@ function InProgress() {
   }, []);
 
   return (
-    <main>
+    <main className="recipe-in-progress">
       <Header pageTitle="Recipe in Progress" searchVisible={false} />
       {path.includes('meals') ? (
-        <>
-          <GoBack />
-          <MealDetails />
-        </>
+        <MealDetails />
       ) : (
-        <>
-          <GoBack />
-          <DrinkDetails />
-        </>
+        <DrinkDetails />
       )}
       <button
+        className="finish-btn"
         type="button"
         data-testid="finish-recipe-btn"
         disabled={isDisabled()}
         onClick={finishRecipe}
       >
-        Finalizar Receita
+        Finish recipe
       </button>
     </main>
   );
