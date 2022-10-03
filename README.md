@@ -27,5 +27,4 @@ Users should be able to:
   <img src="rdm5.png" alt="5" width="200"/>
   <img src="rdm6.png" alt="6" width="200"/>
   <img src="rdm7.png" alt="7" width="200"/>
-  <img src="rdm7.png" alt="8" width="200"/>
 </div>
