@@ -31,7 +31,7 @@ Users should be able to:
 </div>
 
 ### Local usage
-- Clone this repo;
+- Clone this repository;
 - Access the local repository folder;
-- run $ npm install 
-- run $ npm start
+- run $ npm install;
+- run $ npm start.
