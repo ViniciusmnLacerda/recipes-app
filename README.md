@@ -29,3 +29,9 @@ Users should be able to:
   <img src="rdm7.png" alt="7" width="200"/>
   <img src="rdm8.png" alt="8" width="200"/>
 </div>
+
+### Local usage
+- Clone this repo;
+- Access the local repository folder;
+- run $ npm install 
+- run $ npm start
